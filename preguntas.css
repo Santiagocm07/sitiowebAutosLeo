@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor-acordeon {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 80px;
+}
+
+.contenedor-acordeon h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+.acordeon {
+    background: #fff;
+}
+
+/*.acordeon label {
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #1c1c1c;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: all 300ms ease;
+}*/
+
+.acordeon label {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #1c1c1c;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: background-color 300ms ease;
+    position: relative;
+}
+
+.acordeon label::before {
+    content: "+";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10px;
+    transition: opacity 300ms ease;
+    color: #fff;
+}
+
+.acordeon label:hover {
+    background: #2e2e2e;
+}
+
+.acordeon .contenido-acordeon {
+    padding: 0px;
+    margin: 0px 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+
+.btn-acordeon:checked ~ .contenido-acordeon {
+    max-height: 600px;
+    padding: 15px 0px;
+}
+
+.btn-acordeon:checked ~ label::before {
+    content: "-";
+}
+
+.btn-acordeon {
+    display: none;
+}
+
+/*Footer*/
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    /*flex-wrap: wrap;*/
+}
+
+.footer-section {
+    width: 20%;
+    padding: 10px;
+}
+
+.footer-section h2 {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer-section p, .footer-section a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.footer-section a:hover {
+    color: #FF6464;
+}
+
+.footer-section i{
+    font-size: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-section a {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/*@media screen and (max-width: 900px) {
+    .contenedor-acordeon {
+        width: 90%;
+    }
+}*/
+
+@media screen and (max-width: 768px) {
+    .contenedor-acordeon {
+        width: 90%;
+        margin-top: 100px; /* Ajusta el margen superior si es necesario */
+    }
+
+    .contenedor-acordeon h2 {
+        font-size: 2.5em; /* Ajusta el tamaño de fuente */
+    }
+
+    .acordeon label {
+        font-size: 18px; /* Ajusta el tamaño de fuente */
+    }
+
+    .acordeon label::before {
+        font-size: 18px; /* Ajusta el tamaño del icono */
+        width: 20px;
+        height: 20px;
+    }
+
+    .acordeon .contenido-acordeon {
+        margin: 0px 10px; /* Reduce el margen en pantallas pequeñas */
+    }
+
+    .footer-section {
+        width: 30%; /* Ajusta el ancho para pantallas medianas */
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section h2 {
+        font-size: 18px;
+    }
+
+    .footer-section a {
+        font-size: 14px;
+    }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media screen and (max-width: 480px) {
+    .contenedor-acordeon {
+        width: 95%;
+        margin-top: 70px; /* Ajusta el margen superior si es necesario */
+        margin-bottom: 40px; /* Ajusta el margen inferior si es necesario */
+    }
+
+    .contenedor-acordeon h2 {
+        font-size: 2em; /* Ajusta el tamaño de fuente */
+    }
+
+    .acordeon label {
+        font-size: 16px; /* Ajusta el tamaño de fuente */
+        padding: 15px; /* Ajusta el padding */
+    }
+
+    .acordeon label::before {
+        font-size: 16px; /* Ajusta el tamaño del icono */
+        width: 18px;
+        height: 18px;
+    }
+
+    .acordeon .contenido-acordeon {
+        margin: 0px 5px; /* Reduce el margen en pantallas móviles */
+    }
+
+}
