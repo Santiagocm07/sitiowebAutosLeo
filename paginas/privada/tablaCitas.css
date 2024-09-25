@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div .row {
+    margin-top: 150px;
+}
+
+.row h2 {
+  text-align: center;
+  color: #c80d0d;
+  font-size: 40px;
+}
+
+/*Modal*/
+#modal {
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  z-index: 1000;
+  overflow: hidden;
+  position: relative;
+}
+
+.close {
+  top: 10em;
+  position: relative;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+
+.form-row {
+  display: flex; /* Usar flexbox para alinear elementos en fila */
+  justify-content: space-between; /* Espacio entre los elementos */
+  margin-bottom: 10px; /* Espacio entre filas */
+}
+
+.form-group {
+  flex: 1; /* Permitir que cada grupo ocupe espacio igual */
+  margin-right: 10px; /* Espacio entre grupos */
+}
+
+.form-group:last-child {
+  margin-right: 0; /* Eliminar margen derecho en el último grupo */
+}
+
+/* .close {
+  top: 5em;
+  left: 70%;
+} */
+
+.translate {
+  transform: translateY(-100%);
+}
+
+/*Estilos que traia la modal*/
+/* .top{
+  top: 0;
+  height: 100vh;
+  background-color: rgba(0,0,0,.8);
+  display: grid;
+  place-items: center;
+  transition: .4s;
+}
+.close{
+  top: 5em;
+  left: 70%;
+}
+.translate{
+  transform: translateY(-100%);
+} */
