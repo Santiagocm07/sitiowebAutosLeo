@@ -115,7 +115,7 @@ function enviarWhatsApp() {
     const vehiculo = document.getElementById('vehiculo').value;
 
     const mensaje = `Hola, deseo agendar una cita con ustedes. Adjuntaré mis datos: \n**Usuario:** ${usuario} \n**Cédula:** ${cedula} \n**Contacto:** ${contacto} \n**Placa:** ${placa} \n**Fecha:** ${fecha} \n**Servicio:** ${servicio} \n**Vehículo:** ${vehiculo}`;
-    const url = `https://wa.me/573122548016?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://wa.me/573192283582?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, '_blank');
 
