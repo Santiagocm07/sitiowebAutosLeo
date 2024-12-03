@@ -39,11 +39,19 @@
                   <a class="nav-link mx-lg-2" href="/citas.html">Citas</a>
                 </li> -->
                 <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="login.html">Iniciar sesión</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link mx-lg-2" href="https://globpin.com/" target="_blank" style="color: #4a1c96">Globpin</a>
                 </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-gear"></i></a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="display: none;">
+                    <!-- <li><a class="dropdown-item" href="https://globpin.com/" target="_blank" style="color: #4a1c96;">Globpin</a></li> -->
+                    <li><a class="dropdown-item" href="https://formularioautosleo.online/" target="_blank">Formularios</a></li>
+                    <li><a class="dropdown-item" href="./privada/comprasProductos.html" target="_blank">Comprador</a></li>
+                    <li><a class="dropdown-item" href="./privada/conciliadorFac.html" target="_blank">Conciliador de facturas</a></li>
+                    <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
+                  </ul>
+                </li>
+
                 <li id="social-icons" class="nav-item">
                   <a href="https://www.facebook.com/AUTOSLEO1?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
                   <a href="https://www.instagram.com/autosleo?igsh=MW02MWU4anVhYW9pOQ==" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -62,6 +70,17 @@
         </div>
       </nav>
 
+      <!-- Modal para el PIN -->
+      <div id="overlay"></div>
+      <div id="pin-modal" style="display: none;">
+        <h3>Acceso Exclusivo para Empleados</h3>
+        <input type="password" id="pin-input" placeholder="Introduce el PIN">
+        <button id="submit-pin">Enviar</button>
+        <button id="cancel-pin">Cancelar</button>
+      </div>
+
+
+    <script src="navbar.js"></script>
     <!--Bootstrap Js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

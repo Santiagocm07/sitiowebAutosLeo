@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprador</title>
+    <link rel="stylesheet" href="comprasProductos.css">
+    <link rel="icon" href="../imagenes/icons/shopping.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="row">
+        <input type="file" id="excel-input" accept=".xlsx, .xls">
+        <img src="../imagenes/logoAutosLeo.jpeg" alt="">
+    </div>
+
+    <div class="funcions">
+        <button id="boton-filtrar" class="boton-filtrar" style="display: none;">Ocultar Datos</button>
+        <button id="boton-agrupar" class="boton-agrupar">Agrupar datos</button>
+        <button id="abrir-modal" class="abrir-modal">Descargar informe</button>
+        <label for="filtro-input"> Filtrar productos</label>
+        <input type="text" id="filtro-input" placeholder="Buscar productos ...">
+        <label for="tope-maximo">Tope Máximo:</label>
+        <input type="number" id="tope-maximo" placeholder="Ingresa el tope máximo">
+    </div>
+
+    <div id="description-container"></div>
+    <table id="data-table"></table>
+
+    <!-- Modal para poder descargar el reporte de la tabla -->
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <h2>Guardar reporte</h2>
+            <label for="nombre-archivo">Nombre del archivo:</label>
+            <input type="text" id="nombre-archivo" placeholder="Ingresa el nombre" />
+            <button id="guardar-excel"><i class="fa-solid fa-file-excel"></i></button>
+            <button id="guardar-pdf"><i class="fa-solid fa-file-pdf"></i></button>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar los datos agrupados en una nueva tabla-->
+    <div id="modalDatosAgrupados" class="modalDatosAgrupados">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h3>Datos Agrupados</h3>
+            <span id="closeModal" class="close">&times;</span>
+        </div>
+
+        <button id="ocultarBtn" class="ocultarBtn">Ocultar Datos</button>
+        <button id="seleccionarTodosBtn" class="seleccionarTodosBtn">Seleccionar todo</button>
+        <label for="filtroNombre">Filtrar producto</label>
+        <input type="text" id="filtroNombre" placeholder="Buscar productos..." class="input-filtro">
+        <button id="descargarExcel"><i class="fa-solid fa-file-excel"></i></button>
+
+        <div class="modal-body">
+            
+            <!-- Tabla con los datos agrupados -->
+            <table id="tablaAgrupada" class="table">
+            <thead>
+                <tr>
+                <th>Seleccionar</th>
+                <th>Nombre</th>
+                <th>Cantidad Total</th>
+                <th>Producto Faltante</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas de datos agrupados se agregarán aquí -->
+            </tbody>
+            </table>
+        </div>
+        <!-- <div class="modal-footer">
+            <button id="closeBtn" class="closeBtn">Cerrar</button>
+        </div> -->
+        </div>
+    </div>
+  
+    
+    <script src="comprasProductos.js"></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+    <!--incluir la biblioteca SheetJS para convertir la tabla a excel-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <!--incluir la biblioteca SheetJS para convertir la tabla a PDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+</body>
+</html>

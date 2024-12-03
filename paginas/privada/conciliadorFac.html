@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciliador de facturas</title>
+    <link rel="stylesheet" href="conciliadorFac.css">
+    <link rel="icon" href="../imagenes/icons/compare.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    
+    <img src="../imagenes/logoAutosLeo.jpeg" alt="">
+    
+    <div class="informacion">
+        <i class="fa-solid fa-circle-info"></i>
+        <h3>Antes de comparar las facturas recuerda que:</h3>
+        <p><mark>RECIBIDOS</mark> es para comparar el reporte de <u>compras</u> con el informe de la <u>DIAN</u> </p>
+        <p><mark>EMITIDOS</mark> es para comparar el reporte de <u>ventas</u> con el informe de la <u>DIAN</u> </p>
+    </div>
+
+    <h1>Conciliar Facturas</h1>
+    
+    <!-- Formulario para cargar los archivos -->
+    <div class="archivos">
+        <label for="globpin">Subir archivo de Globpin</label>
+        <input type="file" id="archivo1" accept=".xlsx, .xls" />
+        <label for="dian">Subir archivo de la DIAN</label>
+        <input type="file" id="archivo2" accept=".xlsx, .xls" />
+
+        <!-- Toggle para seleccionar "emitido" o "recibido" -->
+        <div id="toggleContainer" style="display:none;">
+            <label for="tipoDatos">Filtrar el tipo de datos:</label>
+            <label class="switch">
+                <input type="checkbox" id="tipoDatos" onchange="actualizarTipoDatos()" />
+                <span class="slider round"></span>
+            </label>
+            <span id="tipoTexto">Emitidos</span>
+        </div>
+
+        <button onclick="compararArchivos()">Comparar</button>
+    </div>
+  
+    <!-- Área para mostrar el reporte -->
+    <div class="reporte">
+        <!-- <h2>Diferencias Encontradas</h2> -->
+        <h2 id="tituloReporte">Diferencias Encontradas</h2>
+        <button id="descargarReporte" style="display: none;"><i class="fa-regular fa-file-excel"></i></button>
+        <button id="verSinDiferencias" style="display: none;">Ver coincidencias</button>
+        <button id="verDiferencias" style="display: none;">Ver diferencias</button>
+        <!-- <pre id="resultado"></pre> -->
+        <div id="resultado"></div>
+        <div id="resultadoSinDiferencias" style="display: none;"></div>
+    </div>
+  
+     <script src="conciliadorFac.js"></script>
+
+    <!-- Script para leer los archivos de Excel-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    
+</body>
+</html>

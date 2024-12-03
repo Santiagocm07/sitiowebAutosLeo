@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+img {
+  width: 20%;
+}
+  
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.archivos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.archivos label {
+  border-bottom: 3px solid #de0000;
+}
+
+#toggleContainer {
+  margin-top: 5px; /* Ajusta el espacio antes del toggle */
+}
+
+#toggleContainer label {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+
+.reporte {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#tituloReporte {
+  margin-bottom: 10px;
+  /* text-align: center; */
+}
+  
+#resultado {
+  white-space: pre-wrap; /* Hacer que el texto largo no se corte */
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+/* Estilo para las diferencias */
+.diferencia {
+  display: block;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.diferencia-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  /* border: 1px solid #f5c6cb; */
+  border: 2px solid #dc576c;
+  padding: 10px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.diferencia-factura {
+  font-weight: bold;
+  margin-top: 20px;
+  /* color: #155724; */
+  border-bottom: 2px solid #721c24;
+}
+
+.sin-diferencias {
+  color: #008000;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #d4edda;
+  border-radius: 5px;
+}
+
+#resultadoSinDiferencias {
+  display: none;  /* Ocultar inicialmente el reporte de consistencias */
+}
+
+.sin-coincidentes {
+  color: red;
+  font-weight: bold;
+}
+
+.consistencia {
+  display: block;
+  background-color: #ccffc4;
+  color: #008000;
+  border: 1px solid #ccffc4;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+
+input[type="file"] {
+  margin: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #de0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #eb5252;
+}
+
+#verSinDiferencias {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #6d6d6d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#verSinDiferencias:hover {
+  background-color: #888888;
+}
+
+#verDiferencias {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #6d6d6d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#verDiferencias:hover {
+  background-color: #888888;
+}
+
+#descargarReporte {
+  background-color: #ffffff;
+  color: #3ee059;
+  padding: 10px;
+  margin-right: 5px;
+  border: 2px solid #3ee059;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#descargarReporte:hover {
+  background-color: #dbfde0;
+}
+
+.informacion {
+  position: relative;
+  max-width: 800px; /* Limita el ancho a 800px */
+  margin: 0 auto; /* Centra el div horizontalmente */
+  overflow-x: hidden;
+}
+
+.informacion i {
+  font-size: 24px; 
+  cursor: pointer; 
+  color: #de0000;
+}
+
+.informacion h3, .informacion p {
+  display: none; /* Inicialmente oculto */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, display 0s ease 0.3s; /* Transición para suavizar el cambio */
+  margin-bottom: 8px;
+}
+
+.informacion:hover {
+  background-color: #e7e7e7;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+}
+
+.informacion:hover h3,
+.informacion:hover p {
+  display: block; /* Hace visible el contenido */
+  opacity: 1;
+  pointer-events: all;
+}
+
+mark {
+  background-color: #f8d7da;
+  color: #de0000;
+}
+
+  

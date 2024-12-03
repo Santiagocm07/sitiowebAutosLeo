@@ -13,14 +13,28 @@
 </head>
 <body>
     <!--Navbar-->
-    <div id="navbar"> </div>
+    <!-- <div id="navbar"> </div>
     <script>
         fetch('navbar.html')
         .then(response => response.text())
         .then(data =>{
             document.getElementById('navbar').innerHTML = data;
         });
-    </script>
+    </script> -->
+     <!--Navbar-->
+     <div id="navbar"></div>
+     <script>
+         fetch('navbar.html')
+         .then(response => response.text())
+         .then(data => {
+             document.getElementById('navbar').innerHTML = data;
+             // Cargar el archivo JavaScript después de insertar el navbar
+             const script = document.createElement('script');
+             script.src = 'navbar.js';
+             script.defer = true; // Esto asegura que el script se ejecute después de que el DOM se haya cargado
+             document.body.appendChild(script);
+         });
+     </script>
 
 
     <form id="loginForm">
